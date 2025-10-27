@@ -9,7 +9,7 @@ The database includes detailed tables capturing race results, qualifying data, l
 The database schema represents entities such as races, drivers, constructors, and circuits in separate related tables. The core relations link race results with driver and constructor information, allowing detailed performance analysis.
 
 ## Physical Model Diagram
-[Include an image diagram of the database schema here]
+<img width="863" height="658" alt="postgres - public" src="https://github.com/user-attachments/assets/c9eaab5a-d7b1-4e63-83bd-bc567368f566" />
 Comments: The primary keys and foreign keys connect results to races, drivers to constructors, and lap times to specific races, ensuring referential integrity.
 
 ## Use Cases
@@ -17,17 +17,26 @@ Comments: The primary keys and foreign keys connect results to races, drivers to
 - Track constructor points accumulation annually
 - Identify fastest laps and qualifying performance by circuit
 - Compare driver championship standings across years
-- How to Run and Test the Project
+
+  How to Run and Test the Project
 - Download and open the SQLite database file in any SQL client.
 - Run provided SQL scripts sequentially to explore different analytical queries.
 - Validate outputs by checking known historical F1 results or use sample test queries included.
 
+
 ## Scripts
-01_schema.sql: Creates or documents the database schema structure.
-02_data_exploration.sql: Runs basic exploration and summary queries.
-03_driver_analysis.sql: Analyzes driver stats and rankings.
-04_constructor_analysis.sql: Examines constructor points and wins.
-05_lap_times.sql: Investigates lap time distributions and fastest laps.
+inserts1: Creates or documents the database schema structure.
+The script proceeds with queries analyzing the dataset, including:
+- Listing drivers born after 1990 sorted by surname.
+- Counting races by country with at least 5 races.
+- Joining races with circuits for detailed race location info.
+- Top 10 drivers with most wins.
+- Average points per constructor.
+- Drivers without any wins.
+- Races where average points exceed overall average.
+- Average pit-stop time in seconds per race.
+- Ranking drivers points per season.
+- Difference in points between first and second place in each race.
 
 Each script builds on the previous, providing increasingly detailed insights. Scripts expect the original dataset schema and complete data download.
 
